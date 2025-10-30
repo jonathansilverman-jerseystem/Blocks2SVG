@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO SPIKE Block Extractor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 LEGO SPIKE Block Extractor</h1>
+            <p>Extract individual coding blocks from your .llsp3 program files</p>
+        </header>
+
+        <main>
+            <!-- Upload Area -->
+            <div id="uploadArea" class="upload-area">
+                <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                <h2>Drop your .llsp3 file here</h2>
+                <p>or click to browse</p>
+                <input type="file" id="fileInput" accept=".llsp3" hidden>
+            </div>
+
+            <!-- Processing Status -->
+            <div id="status" class="status hidden">
+                <div class="spinner"></div>
+                <p id="statusText">Processing your file...</p>
+            </div>
+
+            <!-- Results -->
+            <div id="results" class="results hidden">
+                <div class="success-icon">✓</div>
+                <h2>Success!</h2>
+                <p id="resultsText">Extracted <span id="blockCount">0</span> coding blocks</p>
+                <button id="downloadBtn" class="download-btn">Download ZIP File</button>
+                <button id="resetBtn" class="reset-btn">Process Another File</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with ❤️ for LEGO SPIKE educators</p>
+            <p class="small">Supports SPIKE Prime (.llsp3) files</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
